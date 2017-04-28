@@ -12,7 +12,7 @@ module.exports = (...params) => {
     for (let k of keys) {
       k = k.trim()
 
-      if (a.match(new RegExp(k.replace(/(\(|\)|\[|\]|\.|\*|\{|\}|\+|\?|\|)/g, "\\$1"), "igm"))) {
+      if (a.match(new RegExp(k.replace(/(\(|\)|\[|\]|\.|\*|\{|\}|\+|\?|\||\$)/g, "\\$1"), "igm"))) {
         _arr[k] = _arr[k] || []
 
         if (_arr[k].indexOf(a) === -1) _arr[k].push(a)
@@ -23,3 +23,4 @@ module.exports = (...params) => {
   return _arr
 
 }
+
