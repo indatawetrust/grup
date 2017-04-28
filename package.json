@@ -1,0 +1,27 @@
+{
+  "name": "grup",
+  "version": "0.0.1",
+  "description": "Grouping for string arrays",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indatawetrust/grup.git"
+  },
+  "keywords": [
+    "string",
+    "array",
+    "group"
+  ],
+  "author": "indatawetrust",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indatawetrust/grup/issues"
+  },
+  "homepage": "https://github.com/indatawetrust/grup#readme",
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
+}
