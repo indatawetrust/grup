@@ -1,4 +1,4 @@
-module.exports = (...params) => {
+const grup = (...params) => {
 
   let arr = params[0] || [],
       keys = params[1] || (arr.length ?
@@ -12,7 +12,7 @@ module.exports = (...params) => {
     for (let k of keys) {
       k = k.trim()
 
-      if (a.match(new RegExp(k.replace(/(\(|\)|\[|\]|\.|\*|\{|\}|\+|\?|\||\$)/g, "\\$1"), "igm"))) {
+      if (a.match(k instanceof RegExp ? k : new RegExp(k.replace(/(\(|\)|\[|\]|\.|\*|\{|\}|\+|\?|\||\$|\\)/g, "\\$1"), "igm"))) {
         _arr[k] = _arr[k] || []
 
         if (_arr[k].indexOf(a) === -1) _arr[k].push(a)
@@ -24,3 +24,8 @@ module.exports = (...params) => {
 
 }
 
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = grup
+} else {
+  window.tahta = grup
+}
