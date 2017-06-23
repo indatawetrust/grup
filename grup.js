@@ -10,7 +10,7 @@ const grup = (...params) => {
 
   for (let a of arr) {
     for (let k of keys) {
-      k = k.trim()
+      k = k instanceof RegExp ? k : k.trim()
 
       if (a.match(k instanceof RegExp ? k : new RegExp(k.replace(/(\(|\)|\[|\]|\.|\*|\{|\}|\+|\?|\||\$|\\)/g, "\\$1"), "igm"))) {
         _arr[k] = _arr[k] || []
